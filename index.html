@@ -11,67 +11,92 @@
 
   <link rel="icon" href="/favicon.ico" type="image/x-icon">
 
-
   <link rel="stylesheet" href="css/fonts.css">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/menu.css">
-
+  <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="css/animate.css">
 </head>
-<body class="hundreedpercent">
-    <header>
-      <h1 class="marque">Дома сданы, ключи в день сделки!</h1>
-      <div class='main-menu'>
-        <div class="main-menu__button">
-          <input type="checkbox" id="menu-toggle">
-          <label id="trigger" for="menu-toggle"></label>
-          <label id="burger" for="menu-toggle"></label>
-          <ul id="menu">
-              <li class="menu-list"><a href="#">о проекте</a></li>
-              <li class="submenu-list"><a href="#">местоположение</a></li>
-              <li class="submenu-list"><a href="#">фотогалерея</a></li>
-              <li class="submenu-list"><a href="#">аэрофотосъемка</a></li>
-              <li class="submenu-list"><a href="#">3d-тур по квартирам</a></li>
-              <li class="menu-list"><a href="#">расчёт ипотеки</a></li>
-              <li class="menu-list"><a href="#">акции</a></li>
-              <li class="menu-list"><a href="#">новости</a></li>
-              <li class="menu-list"><a href="#">документы</a></li>
-              <li class="menu-list"><a href="#">контакты</a></li>
+<body>
+    <header class="header">
+      <div class="header__logo"><a href="/"><img src="img/logo.png" /></a></div>
+      <input class="menu-check" type="checkbox" id="menu-check" />
+      <div class="menu">
+        <div class="menu__panel">
+          <ul class="main-menu">
+            <li class="main-menu__list"><a href="#">О проекте</a></li>
+            <ul class="sub-menu">
+              <li class="sub-menu__list"><a href="#">Местоположение</a></li>
+              <li class="sub-menu__list"><a href="#">Фотогалерея</a></li>
+              <li class="sub-menu__list"><a href="#">Аэрофотосъемка</a></li>
+              <li class="sub-menu__list"><a href="#">3D-тур по квартирам</a></li>
+            </ul>
+            <li class="main-menu__list"><a href="#">Расчет ипотеки</a></li>
+            <li class="main-menu__list"><a href="#">Акции</a></li>
+            <li class="main-menu__list"><a href="#">Новости</a></li>
+            <li class="main-menu__list"><a href="#">Документы</a></li>
+            <li class="main-menu__list"><a href="#">Контакты</a></li>
           </ul>
-
         </div>
-        <div class="main-menu__logo">
-          <a href="/"><img src="./img/logo.png" alt=""></a>
+        <div class="menu__trigger">
+          <label class="menu__label" for="menu-check"><span></span></label>
         </div>
       </div>
     </header>
-    <main class="page-wrapper">
-      <div class="shares">
-        <div class="shares__data">15/01/2017</div>
-        <div class="shares__text">квартиры в ипотеку: <br/>
-            первый взнос за наш счет!</div>
-        <a href="#" class="shares__link">подробнее</a>
-        <a href="#" class="shares__link">все акции</a>
-        <a href="#" class="shares__link">ипотечный калькулятор</a>
+    <video class="home__clouds" loop autoplay>
+      <source src="video/home.mp4" type="video/mp4">
+    </video>
+    <main class="page-wrapper home">
+      <div class="news">
+        <div class="news__slide first active">
+          <div class="news__date">15/01/2017</div>
+          <div class="news__caption">Квартиры в ипотеку: первый взнос за наш счет!</div>
+          <div class="news__links">
+            <a href="#">Подробнее</a>
+            <a href="#">Все акции</a>
+            <a href="#">Ипотечный калькулятор</a>
+          </div>
+        </div>
+        <div class="news__slide">
+          <div class="news__date">20/01/2017</div>
+          <div class="news__caption">Скидка 17% на все квартиры в комплексе!</div>
+          <div class="news__links">
+            <a href="#">Подробнее</a>
+            <a href="#">Все акции</a>
+          </div>
+        </div>
       </div>
-        <div class="baner">
-            <div class="baner__title">старт продаж <br/>
-                третьей очереди!</div>
-            <div class="baner__subtitle">квартиры от 1,7 млн. руб.</div>
+      <div class="home-banner">
+        <div class="home-banner__slide first active">
+          <h1 class="home-banner__caption">Дома сданы,<br />Пора заселяться!</h1>
+          <h2 class="home-banner__subcaption">Ключи в день сделки!</h2>
         </div>
-        <div class="choose-flat">
-            <a href="/"><img class="house-img" src="./img/apart.png" alt="выбрать квартиру"></a>
-            <div class="choose-flat__text">выбрать <br/>
-                квартиру</div>
+        <div class="home-banner__slide">
+          <h1 class="home-banner__caption">Старт продаж<br /> третьей очереди</h1>
+          <h2 class="home-banner__subcaption">Квартиры от 1.7 млн.руб.</h2>
         </div>
+      </div>
+      <div class="home__button">
+        <img src="img/apart.png" />
+        <h2>Выбрать<br />квартиру</h2>
+      </div>
     </main>
     <footer class="footer">
-      <div class="footer-coll footer-coll--phone">
-        <a href="tel:+7499215-89-13">+7 (499) 215-89-13</a>
+      <div class="footer__phone">
+        +7 (499) 215-89-13
       </div>
-        <div class="footer-coll">Московская область, Солнечногорский район, <br/>
-            Андреевка, д. Голубое, ул. Жилинская, д.1</div>
-        <div class="footer-coll">© 2017 ГК «Сибпромстрой» <br/>
-        Предложение не является публичной офертой.</div>
+      <div class="footer__info">
+        <p>
+          Московская область, Солнечногорский район,<br />
+          Андреевка, д. Голубое, Тверецкий пр-зд д.16/3
+        </p>
+        <p>
+          ©2017 ГК «Сибпромстрой»<br />
+          Предложение не является публичной офертой.
+        </p>
+      </div>
     </footer>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/index.js"></script>
 </body>
 </html>

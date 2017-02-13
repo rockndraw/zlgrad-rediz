@@ -1,155 +1,91 @@
-
-@keyframes checked-anim {
-
-    100% {
-        transform: translateX(0);
-    }
-}
-.main-menu__button li{
-    outline: 0;
-    display: none;
-}
-.main-menu__buttonli {
-    width: 230px;
-    text-indent: 56px;}
-.main-menu__buttona:focus {
-    display: block;
-    color: #333;
-    background-color: #eee;
-    transition: all .5s;
-}
-
-#trigger, #burger, #burger:before, #burger:after {
+.menu {
   position: absolute;
-  top: 45px;
-  left: 35px;
-  background: #fff;
-  width: 52px;
-  height: 6px;
-  transition: .2s ease;
-  cursor: pointer;
-  z-index: 1;
+  top: 0;
+  left: -525px;
+  display: flex;
+  z-index: 999;
+  transition: .8s;
 }
-#trigger {   
-    height: 100%;
-    background: none;
-    width: 120px;
-    top: 0;
-    left: 0;
+.menu-check {
+  display: none;
 }
-#burger:before {
-    content: " ";
-    top: 10px;
-    left: 0;
-}
-#burger:after {
-    content: " ";
-    top: 20px;
-    left: 0;
-}
-#menu-toggle:checked + #trigger + #burger {
-    top: 56px;
-    transform: rotate(180deg);
-    left: 516px;
-    transition: transform,left 1s ease;
-}
-
-#menu-toggle:checked + #trigger + #burger:before {
-    width: 20px;
-    top: -2px;
-    left: 38px;
-    transform: rotate(45deg) translateX(-5px);
-    transition: transform .2s ease;
-}
-#menu-toggle:checked + #trigger + #burger:after {
-    width: 20px;
-    top: 2px;
-    left: 38px;
-    transform: rotate(-45deg) translateX(-5px);
-    transition: transform .2s ease;
-}
-#menu {
-    position: fixed;
-    top:0;
-    left:0;
-    transform: translateX(-100%);
-    margin: 0; padding: 0;
-    width: 482px;
-    height: 100%;
-    background-color: #fff;
-}
-.menu-list {
-    color: black;
-    text-transform: uppercase;
-    padding-left: 100px;
-    margin: 96px 0 -55px 0;
-    font: 21pt "Roboto", sans-serif;
-    font-weight: 200;
-    line-height: 1.8;
-    text-decoration: none;
-    list-style: none;
-}
-.submenu-list {
-    color: black;
-    text-transform: uppercase;
-    padding-left: 100px;
-    margin: 89px 0 -52px 0;
-    font: 15pt "Roboto", sans-serif;
-    font-weight: 200;
-    line-height: 0.8;
-    text-decoration: none;
-    list-style: none;
-}
-li:nth-child(5) {
-    padding-bottom: 40px;
-}
-
-#menu:after{
-    content: '';
-    position: absolute;
-    top: 89px;
-    width: 120px;
-    height: 120px;
-    background: rgba(200, 89, 82, .6);
-    left: 100%;
-}
-#menu-toggle:checked + .main-menu__button{
-    transform:translate(100px)
-}
-#menu-toggle:checked + #trigger + #burger + #menu {
-    animation: checked-anim 1s ease both;
-}
-#menu-toggle:checked + #trigger ~ #menu > li {
-    display: block;
-}
-[type="checkbox"]:not(:checked), [type="checkbox"]:checked {
-    display: none;
-}
-
-.main-menu{
+.menu__label {
+  width: 100%;
+  height: 100%;
+  display: block;
   position: relative;
-  top: 21px;
-  display: inline-block;
-  font-size: 0;
 }
-
-.main-menu__button{
-  width: 120px;
-  height: 120px;
-  background: rgba(200, 89, 82, .6);
-  display: inline-block;
-  vertical-align: top;
+.menu__label span, .menu__label span::before, .menu__label span::after {
+  width: 60px;
+  height: 6px;
+  display: block;
+  background: #fff;
+  content: '';
+  position: relative;
+  transition: .6s;
 }
-
-.main-menu__logo {
-    display: inline-block;
-    vertical-align: top;
-    height: 120px;
-    background: #000;
-    padding: 0 32px;
-    width: 297px;
+.menu__label span {
+  left: 37.5px;
+  top: 64px
 }
-
-.main-menu__logo img {
-    max-height: 120px;
+ .menu__label span::before {
+   top: -15px;
+ }
+ .menu__label span::after {
+   top: 9px;
+ }
+.menu-check:checked + .menu {
+  left: 0;
+}
+.menu-check:checked ~ .menu .menu__label span::before {
+  transform: rotate(-45deg) translate(-10px,-3px);
+  width: 34px;
+}
+.menu-check:checked ~ .menu .menu__label span::after {
+  transform: rotate(45deg) translate(-10px,3px);
+  width: 34px;
+}
+.menu__panel {
+  width: 525px;
+  height: 100vh;
+  background: rgba(255,255,255,.98);
+  box-shadow: 1px 1px 2px rgba(0,0,0,.2);
+}
+.menu-check:checked + .menu .menu__panel{
+  box-shadow: 0 0 0 2038px rgba(0,0,0,.7);
+}
+.menu__trigger {
+  width: 135px;
+  height: 135px;
+  background: rgba(211,68,65,.85);
+  margin-top: 40px;
+}
+.main-menu {
+  margin-top: 60px;
+  margin-left: 50px;
+  list-style: none;
+}
+.main-menu__list {
+  font-size: 32px;
+  font-weight: 400;
+  text-transform: uppercase;
+  margin: 20px 0;
+  transition: .8s;
+}
+.main-menu__list:hover {
+  color: rgba(211,68,65,1);
+}
+.sub-menu {
+  list-style: none;
+  margin: 40px 0;
+}
+.sub-menu__list {
+  font-size: 24px;
+  font-weight: 400;
+  text-transform: uppercase;
+  margin: 15px 0;
+  transition: .8s;
+}
+.sub-menu__list:hover {
+  color: rgba(211,68,65,1);
 }

@@ -1,0 +1,87 @@
+.stage1 svg{
+  background: url(../img/stage1.jpg);
+  background-size: cover;
+}
+.korpus-stroke{
+    fill:rgba(248,176,69,.3);
+    stroke:#fff;
+    stroke-miterlimit:10;
+    stroke-width:4px;
+    transition: .7s;
+}
+svg .korpus-stroke:hover{
+    fill:rgba(246, 81, 64,.5);
+    cursor: pointer;
+}
+.korpus {
+  position: absolute;
+  z-index: 99;
+  color: #fff;
+  pointer-events: none;
+}
+.korpus__heading {
+  display: flex;
+}
+.korpus--k1 {
+  top: 50%;
+  left: 12%;
+}
+.korpus--k2 {
+  top: 30%;
+  left: 40%;
+}
+.korpus--k3 {
+  top: 50%;
+  left: 65%;
+}
+.korpus__number {
+  padding: 10px 0;
+  text-align: center;
+  width: 50px;
+  font-size: 24px;
+  font-weight: 900;
+  background: rgba(255,255,255,0.85);
+  color: rgba(248,176,69,1);
+}
+.korpus__text {
+  background: rgba(248,176,69,0.85);
+  padding: 10px 20px;
+  font-size: 24px;
+  text-transform: uppercase;
+}
+.korpus__hidden {
+  color: #404040;
+  text-transform: uppercase;
+  font-weight: 700;
+  opacity: 0;
+  transition: .7s;
+}
+.korpus__hidden.shown {
+  opacity: 1;
+}
+.korp-table__caption, .korp-table__item {
+  background: rgba(255,255,255,0.85);
+  margin: 5px 0;
+}
+.korp-table__caption-val {
+  padding: 5px;
+  padding-left: 10px;
+  font-size: 40px;
+  display: inline-block;
+  vertical-align: top;
+}
+.korp-table__caption-text {
+  padding-top: 11px;
+  line-height: 17px;
+  display: inline-block;
+  vertical-align: top;
+  letter-spacing: .5px;
+}
+.korp-table__item {
+  padding: 5px;
+  padding-left: 10px;
+}
+.korp-table__item span{
+  padding-left: 10px;
+  font-size: 22px;
+}
